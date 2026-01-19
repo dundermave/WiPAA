@@ -12,7 +12,6 @@ namespace Builder
           Console.WriteLine($"{imie} zostaje zapisany do armii.");
       }
 
-
       public void PobieranieBroni()
       {
           EnsureWarriorExists();
