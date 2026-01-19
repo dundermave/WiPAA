@@ -1,27 +1,35 @@
-
-namespace Composite {
-  class Program {
-    static void Main()
+namespace Composite
+{
+    class Program
+    {
+        static void Main()
         {
-          MenuSection rootMenu = new MenuSection("Menu");
+            MenuSection rootMenu = new MenuSection("Karta dań");
 
-          MenuSection mainSection = new MenuSection("Dania");
-          rootMenu.Add(mainSection);
+            MenuSection startersSection = new MenuSection("Przystawki");
+            rootMenu.Add(startersSection);
+            startersSection.Add(new MenuItem("Bruschetta z pomidorami"));
+            startersSection.Add(new MenuItem("Zupa krem z dyni"));
 
-          mainSection.Add(new MenuItem("Frytki z sosem tatarskim"));
-          mainSection.Add(new MenuItem("Pizza margherita"));
+            MenuSection mainDishesSection = new MenuSection("Dania główne");
+            rootMenu.Add(mainDishesSection);
 
-          MenuSection meatSection = new MenuSection("Mięsne");
-          mainSection.Add(meatSection);
-          meatSection.Add(new MenuItem("Kotlet schabowy z surówką"));
-          meatSection.Add(new MenuItem("Gulasz wołowy"));
+            MenuSection vegetarianSection = new MenuSection("Wegetariańskie");
+            mainDishesSection.Add(vegetarianSection);
+            vegetarianSection.Add(new MenuItem("Risotto z grzybami"));
+            vegetarianSection.Add(new MenuItem("Makaron z pesto bazyliowym"));
 
-          MenuSection fishSection = new MenuSection("Rybne");
-          mainSection.Add(fishSection);
-          fishSection.Add(new MenuItem("Łosoś wędzony w sosie"));
+            MenuSection grillSection = new MenuSection("Z grilla");
+            mainDishesSection.Add(grillSection);
+            grillSection.Add(new MenuItem("Stek wołowy z masłem czosnkowym"));
+            grillSection.Add(new MenuItem("Pierś kurczaka grillowana"));
 
-          rootMenu.Print(0);
+            MenuSection dessertsSection = new MenuSection("Desery");
+            rootMenu.Add(dessertsSection);
+            dessertsSection.Add(new MenuItem("Sernik waniliowy"));
+            dessertsSection.Add(new MenuItem("Mus czekoladowy"));
+
+            rootMenu.Print(0);
         }
-  }
+    }
 }
-
